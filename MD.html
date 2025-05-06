@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curso de Marketing Digital</title>
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDA5Njg4IiBkPSJNNDk3LDI1NmMwLDEzMy4xLTEwNy45LDI0MS0yNDEsMjQxUzE1LDM4OS4xLDE1LDI1NlMxMjIuOSwxNSwyNTYsMTVTNDk3LDEyMi45LDQ5NywyNTZ6Ii8+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTI1Niw0MjVjLTkzLjQsMC0xNjktNzUuNi0xNjktMTY5czc1LjYtMTY5LDE2OS0xNjlzMTY5LDc1LjYsMTY5LDE2OVMzNDkuNCw0MjUsMjU2LDQyNXogTTI1NiwxNDdjLTYwLjEsMC0xMDksNDguOS0xMDksMTA5czQ4LjksMTA5LDEwOSwxMDlzMTA5LTQ4LjksMTA5LTEwOVMzMTYuMSwxNDcsMjU2LDE0N3oiLz48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMjgxLjIsMjc2LjFsLTI0LjUtMTMuN3YtODUuNmMwLTUuNy00LjYtMTAuMy0xMC4zLTEwLjNzLTEwLjMsNC42LTEwLjMsMTAuM1YyNzFjMCwzLjQsMS43LDYuNiw0LjUsOC41bDI5LjEsMTYuMmMyLjEsMS4yLDQuNCwxLjksNi45LDEuOWMyLjEsMCw0LjItMC43LDYuMS0xLjhjMi45LTEuNSw1LjQtMy43LDcuNC02LjJDMjg5LjMsMjg2LjEsMjg3LjYsMjc5LjYsMjgxLjIsMjc2LjF6Ii8+PC9zdmc+">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Font & base */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #e0f2f1;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+      position: relative;
+    }
+
+    header {
+      background: linear-gradient(135deg, #004d40 0%, #009688 100%);
+      color: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 150, 136, 0.3);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.4em;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    main {
+      max-width: 96%;
+      background: white;
+      margin: 30px auto;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    main section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      color: #00796b;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #009688;
+      padding-bottom: 8px;
+      font-weight: 700;
+    }
+
+    h3 {
+      color: #00796b;
+      margin: 18px 0 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1em;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-bottom: 1.2em;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .destaque {
+      background-color: #e0f2f1;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #00796b;
+      margin: 15px 0;
+    }
+
+    table {
+      width: 96%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th, table td {
+      border: 1px solid #b2dfdb;
+      padding: 12px 8px;
+      text-align: left;
+    }
+
+    table th {
+      background-color: #00796b;
+      color: white;
+      font-weight: bold;
+    }
+
+    table tr:nth-child(even) {
+      background-color: #e0f2f1;
+    }
+
+    table tr:hover {
+      background-color: #b2dfdb;
+    }
+
+    .metodologia-card {
+      background: #e0f2f1;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 4px solid #009688;
+    }
+
+    .metodologia-card h4 {
+      color: #00796b;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 10px 20px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Botão de inscrição */
+    .btn-inscricao {
+      display: inline-block;
+      background-color: #009688;
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+      margin-top: 15px;
+      border: none;
+    }
+
+    .btn-inscricao:hover,
+    .btn-inscricao:focus {
+      background-color: #00796b;
+    }
+
+    /* Botão de WhatsApp */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background-color: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      text-decoration: none;
+      transform: scale(0);
+      transition: transform 0.3s ease;
+      z-index: 100;
+    }
+    
+    /* Botão Voltar ao Topo */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #00796b;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      text-decoration: none;
+      transform: scale(0);
+      transition: transform 0.3s ease;
+      z-index: 100;
+    }
+
+    .whatsapp-btn i {
+      font-size: 30px;
+    }
+
+    .whatsapp-btn.show, .back-to-top.show {
+      transform: scale(1);
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px 10px;
+      }
+      main {
+        margin: 20px 10px;
+        padding: 20px 15px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      table th, table td {
+        font-size: 0.9rem;
+        padding: 6px 4px;
+      }
+      .whatsapp-btn {
+        bottom: 20px;
+        left: 20px;
+      }
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+  <!-- Font Awesome para o ícone do WhatsApp -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header id="topo">
+    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="60" height="60" style="margin-right: 15px;">
+        <path fill="#ffffff" d="M497,256c0,133.1-107.9,241-241,241S15,389.1,15,256S122.9,15,256,15S497,122.9,497,256z"/>
+        <path fill="#ffffff" d="M256,425c-93.4,0-169-75.6-169-169s75.6-169,169-169s169,75.6,169,169S349.4,425,256,425z M256,147c-60.1,0-109,48.9-109,109s48.9,109,109,109s109-48.9,109-109S316.1,147,256,147z"/>
+        <path fill="#ffffff" d="M281.2,276.1l-24.5-13.7v-85.6c0-5.7-4.6-10.3-10.3-10.3s-10.3,4.6-10.3,10.3V271c0,3.4,1.7,6.6,4.5,8.5l29.1,16.2c2.1,1.2,4.4,1.9,6.9,1.9c2.1,0,4.2-0.7,6.1-1.8c2.9-1.5,5.4-3.7,7.4-6.2C289.3,286.1,287.6,279.6,281.2,276.1z"/>
+      </svg>
+      <h1>Curso de Marketing Digital</h1>
+    </div>
+    <p>Estratégias avançadas para dominar o marketing online e impulsionar resultados</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Sobre o Curso</h2>
+      <p>Este curso oferece formação completa nos fundamentos e estratégias avançadas de marketing digital, capacitando os participantes a planejar, executar e mensurar campanhas eficazes em múltiplos canais online.</p>
+      
+      <div class="destaque">
+        <p><strong>Duração:</strong> 1 mês (60 créditos totais, onde cada crédito equivale a 30 minutos de estudo)</p>
+        <p><strong>Modalidade:</strong> Online via Google Meet com sessões ao vivo e material de apoio</p>
+        <p><strong>Certificação:</strong> Certificado digital com selo de autenticidade de 60 horas</p>
+        <p><strong>Investimento:</strong> <span style="font-size: 1.2rem; font-weight: bold;">899 MZN</span></p>
+      </div>
+      
+      <p>Ao concluir o curso, você estará apto a desenvolver estratégias de marketing digital integradas e orientadas a resultados. Ideal para profissionais que desejam:</p>
+      <ul>
+        <li>Elaborar planos de marketing digital consistentes</li>
+        <li>Dominar ferramentas de análise e métricas de performance</li>
+        <li>Desenvolver estratégias eficazes para redes sociais e SEO</li>
+        <li>Implementar campanhas de mídia paga com melhor retorno sobre investimento</li>
+        <li>Atualizar-se sobre as tendências e tecnologias emergentes no cenário digital</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Metodologia de Ensino</h2>
+      
+      <div class="metodologia-card">
+        <h4>🖥️ Aulas ao Vivo</h4>
+        <p>Todas as aulas serão ministradas ao vivo através do Google Meet, permitindo interação direta com o instrutor e demais participantes. As sessões ficam gravadas para revisão posterior.</p>
+      </div>
+      
+      <div class="metodologia-card">
+        <h4>📚 Material Didático</h4>
+        <p>Acesso a e-books, templates de planejamento, planilhas para métricas, guias de boas práticas e ferramentas para aplicação imediata em campanhas reais.</p>
+      </div>
+      
+      <div class="metodologia-card">
+        <h4>✅ Projetos Práticos</h4>
+        <p>Desenvolvimento de campanhas reais, com aplicação imediata dos conceitos aprendidos e feedback individualizado do instrutor.</p>
+      </div>
+      
+      <div class="metodologia-card">
+        <h4>🔄 Estudos de Caso</h4>
+        <p>Análise de casos de sucesso e fracasso de grandes marcas, com discussão das estratégias adotadas e resultados obtidos.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Plano do Curso Detalhado</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Módulo</th>
+            <th>Conteúdo Programático</th>
+            <th>Créditos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>
+              <strong>Fundamentos do Marketing Digital</strong>
+              <ul>
+                <li>Evolução do marketing tradicional para o digital</li>
+                <li>Comportamento do consumidor online</li>
+                <li>Funil de vendas e jornada do cliente</li>
+                <li>Ecossistema de canais digitais</li>
+              </ul>
+            </td>
+            <td>4 créditos</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>
+              <strong>Planejamento Estratégico Digital</strong>
+              <ul>
+                <li>Definição de objetivos SMART</li>
+                <li>Análise de mercado e concorrência online</li>
+                <li>Segmentação e personas para o ambiente digital</li>
+                <li>Estratégias de conteúdo e posicionamento</li>
+                <li>Orçamento e alocação de recursos</li>
+              </ul>
+            </td>
+            <td>8 créditos</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>
+              <strong>SEO (Search Engine Optimization)</strong>
+              <ul>
+                <li>Fundamentos de SEO on-page e off-page</li>
+                <li>Pesquisa e estratégia de palavras-chave</li>
+                <li>Otimização técnica de websites</li>
+                <li>Link building e autoridade de domínio</li>
+                <li>SEO local e Google My Business</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>
+              <strong>Marketing de Conteúdo</strong>
+              <ul>
+                <li>Planejamento editorial e calendário de conteúdo</li>
+                <li>Criação de conteúdo para diferentes plataformas</li>
+                <li>Storytelling e copywriting para web</li>
+                <li>Formatos de conteúdo (blog, ebook, infográfico, vídeo)</li>
+                <li>Distribuição e amplificação de conteúdo</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>
+              <strong>Mídia Paga e Google Ads</strong>
+              <ul>
+                <li>Fundamentos de campanhas pagas</li>
+                <li>Google Ads: Search, Display, Shopping e YouTube</li>
+                <li>Estruturação de contas e campanhas</li>
+                <li>Estratégias de lance e orçamento</li>
+                <li>Otimização de campanhas e conversões</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>
+              <strong>Marketing nas Redes Sociais</strong>
+              <ul>
+                <li>Estratégias para cada plataforma (Instagram, Facebook, LinkedIn, TikTok)</li>
+                <li>Gestão de comunidades e engajamento</li>
+                <li>Criação de conteúdo para redes sociais</li>
+                <li>Campanhas pagas em redes sociais</li>
+                <li>Ferramentas de gerenciamento e automação</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>
+              <strong>Email Marketing e Automação</strong>
+              <ul>
+                <li>Estratégias de captação e nutrição de leads</li>
+                <li>Criação de fluxos de automação</li>
+                <li>Copywriting para email</li>
+                <li>Métricas e otimização de campanhas</li>
+                <li>Ferramentas de email marketing e CRM</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>
+              <strong>Análise de Dados e Métricas</strong>
+              <ul>
+                <li>Google Analytics e Google Tag Manager</li>
+                <li>KPIs e métricas essenciais</li>
+                <li>Dashboards e relatórios de performance</li>
+                <li>Testes A/B e otimização contínua</li>
+                <li>Atribuição de conversões e ROI</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>
+              <strong>Conversão e Experiência do Usuário</strong>
+              <ul>
+                <li>Princípios de UX/UI para marketing</li>
+                <li>Landing pages de alta conversão</li>
+                <li>Otimização de funil de vendas</li>
+                <li>Técnicas de persuasão e gatilhos mentais</li>
+                <li>Psicologia do consumidor digital</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>
+              <strong>Tendências e Inovação em Marketing Digital</strong>
+              <ul>
+                <li>Inteligência artificial aplicada ao marketing</li>
+                <li>Marketing conversacional e chatbots</li>
+                <li>Realidade aumentada e experiências imersivas</li>
+                <li>Marketing orientado a dados (data-driven)</li>
+                <li>Privacidade de dados e marketing sem cookies</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Projeto Final e Avaliação</h2>
+      <ul>
+        <li>Elaboração de um plano de marketing digital completo</li>
+        <li>Implementação de uma campanha real em plataforma escolhida</li>
+        <li>Análise de resultados e apresentação de insights</li>
+        <li>Feedback personalizado dos instrutores</li>
+      </ul>
+      
+      <div class="destaque">
+        <h3>Sistema de Avaliação</h3>
+        <p>Os participantes serão avaliados através de um sistema completo que inclui:</p>
+        <ul>
+          <li><strong>Testes Semanais Online:</strong> Questionários de múltipla escolha disponibilizados após cada módulo para verificar a compreensão dos conceitos fundamentais.</li>
+          <li><strong>Atividades Práticas:</strong> Configuração de campanhas, criação de conteúdo e implementação de estratégias aprendidas durante o curso.</li>
+          <li><strong>Participação nas Aulas:</strong> Envolvimento nas discussões e contribuições durante as sessões ao vivo.</li>
+          <li><strong>Projeto Final:</strong> Desenvolvimento de um plano de marketing digital completo para uma empresa ou produto, que corresponde a 40% da nota final.</li>
+        </ul>
+        <p>Para obter a certificação, o aluno deve alcançar média mínima de 70% nas avaliações e ter pelo menos 75% de presença nas aulas síncronas.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Benefícios do Curso</h2>
+      <ul>
+        <li><strong>Aplicação Imediata:</strong> Ferramentas e técnicas que podem ser implementadas no dia seguinte à aula</li>
+        <li><strong>Instrutores Experientes:</strong> Profissionais com sólida experiência em marketing digital e resultados comprovados</li>
+        <li><strong>Networking:</strong> Oportunidade de conectar-se com outros profissionais da área</li>
+        <li><strong>Ferramentas Exclusivas:</strong> Acesso a templates, planilhas de análise e ferramentas de planejamento</li>
+        <li><strong>Mentoria:</strong> 30 dias de acesso ao instrutor para tirar dúvidas após a conclusão do curso</li>
+        <li><strong>Certificado Reconhecido:</strong> Documento que agrega valor ao seu currículo profissional</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Datas e Horários</h2>
+      <div class="destaque">
+        <p><strong>Início das aulas:</strong> Próxima turma a iniciar em 15 de Maio de 2025</p>
+        <p><strong>Aulas síncronas:</strong> Terças e quintas-feiras, das 19h às 21h</p>
+        <p><strong>Atividades assíncronas:</strong> Disponibilizadas às sextas-feiras para realização durante o fim de semana</p>
+        <p><strong>Plantão de dúvidas:</strong> Segundas-feiras, das 18h às 19h</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Depoimentos de Alunos</h2>
+      <div class="metodologia-card">
+        <p><em>"O curso transformou minha visão sobre marketing digital. Consegui implementar estratégias que aumentaram o tráfego do nosso site em 85% e as conversões em 32% em apenas dois meses."</em></p>
+        <p style="text-align: right;"><strong>- Patricia Langa, Gerente de Marketing</strong></p>
+      </div>
+
+      <div class="metodologia-card">
+        <p><em>"Como empreendedora, eu precisava entender melhor o marketing digital para meu negócio. Este curso me deu não só conhecimento, mas confiança para tomar decisões estratégicas que impactaram positivamente minhas vendas."</em></p>
+        <p style="text-align: right;"><strong>- Juliana Lurdes, Proprietária de E-commerce</strong></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Perguntas Frequentes</h2>
+      <h3>Preciso ter experiência em marketing para fazer o curso?</h3>
+      <p>Não é necessário experiência prévia em marketing digital, mas conhecimentos básicos de marketing tradicional são recomendados. O curso atende desde iniciantes até profissionais que desejam aprimorar suas competências.</p>
+
+      <h3>O certificado é reconhecido pelo mercado?</h3>
+      <p>Sim, o certificado é valorizado pelo mercado e possui validação digital para comprovar sua autenticidade.</p>
+
+      <h3>Vou aprender a usar ferramentas específicas?</h3>
+      <p>Sim, o curso inclui demonstrações práticas de ferramentas essenciais como Google Analytics, Google Ads, plataformas de automação de marketing, editores de conteúdo e ferramentas de análise de SEO.</p>
+
+      <h3>O curso é adequado para pequenas empresas?</h3>
+      <p>Com certeza! O curso apresenta estratégias que podem ser aplicadas em negócios de qualquer porte, com foco em otimização de recursos e máximo retorno sobre investimento.</p>
+    </section>
+
+    <section style="text-align:center;">
+      <button class="btn-inscricao" onclick="alert('Obrigado pelo seu interesse! Em breve entraremos em contato para a inscrição.')">INSCREVA-SE AGORA</button>
+      <p style="margin-top: 10px; font-size: 0.9rem;">Vagas limitadas! Garanta já a sua!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 eCursos Academy Todos os direitos reservados</p>
+    <p>Suporte: ecursosacademy@outlook.com Tel: +258 85 274 5358</p>
+  </footer>
+
+  <!-- Botão de WhatsApp flutuante -->
+  <a href="https://wa.me/258852745358" class="whatsapp-btn" id="whatsappBtn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Botão Voltar ao Topo -->
+  <a href="#topo" class="back-to-top" id="backToTopBtn">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script>
+    // Script para mostrar o botão de WhatsApp e Voltar ao Topo ao rolar
+    window.addEventListener('scroll', function() {
+      const whatsappBtn = document.getElementById('whatsappBtn');
+      const backToTopBtn = document.getElementById('backToTopBtn');
+      
+      if (window.scrollY > 300) {
+        whatsappBtn.classList.add('show');
+        backToTopBtn.classList.add('show');
+      } else {
+        whatsappBtn.classList.remove('show');
+        backToTopBtn.classList.remove('show');
+      }
+    });
+    
+    // Rolagem suave ao clicar no botão Voltar ao Topo
+    document.getElementById('backToTopBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>

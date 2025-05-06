@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curso Gratuito de Importação</title>
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMzQ5OGRiIiBkPSJNNDk3LDI1NmMwLDEzMy4xLTEwNy45LDI0MS0yNDEsMjQxUzE1LDM4OS4xLDE1LDI1NlMxMjIuOSwxNSwyNTYsMTVTNDk3LDEyMi45LDQ5NywyNTZ6Ii8+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTI1Niw0MjVjLTkzLjQsMC0xNjktNzUuNi0xNjktMTY5czc1LjYtMTY5LDE2OS0xNjlzMTY5LDc1LjYsMTY5LDE2OVMzNDkuNCw0MjUsMjU2LDQyNXogTTI1NiwxNDdjLTYwLjEsMC0xMDksNDguOS0xMDksMTA5czQ4LjksMTA5LDEwOSwxMDlzMTA5LTQ4LjksMTA5LTEwOVMzMTYuMSwxNDcsMjU2LDE0N3oiLz48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMjYwLDMzMGgtMjBWMjAxYy0xNiwwLTE4LjI1LDUuMjUtMjUsMTVsLTMuNzUtOC43NWMxLjc1LTIsMTctMTcuNzUsMzQtMTcuNzVoMTQuNzVWMzMweiIvPjwvc3ZnPg==">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Font & base */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #e3f2fd;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+      position: relative;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a5276 0%, #3498db 100%);
+      color: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.4em;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    main {
+      max-width: 96%;
+      background: white;
+      margin: 30px auto;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    main section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      color: #2980b9;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 8px;
+      font-weight: 700;
+    }
+
+    h3 {
+      color: #2980b9;
+      margin: 18px 0 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1em;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-bottom: 1.2em;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .destaque {
+      background-color: #e3f2fd;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #2980b9;
+      margin: 15px 0;
+    }
+
+    table {
+      width: 96%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th, table td {
+      border: 1px solid #bbdefb;
+      padding: 12px 8px;
+      text-align: left;
+    }
+
+    table th {
+      background-color: #2980b9;
+      color: white;
+      font-weight: bold;
+    }
+
+    table tr:nth-child(even) {
+      background-color: #e3f2fd;
+    }
+
+    table tr:hover {
+      background-color: #bbdefb;
+    }
+
+    .metodologia-card {
+      background: #e3f2fd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 4px solid #3498db;
+    }
+
+    .metodologia-card h4 {
+      color: #2980b9;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 10px 20px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Botão de inscrição */
+    .btn-inscricao {
+      display: inline-block;
+      background-color: #3498db;
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+      margin-top: 15px;
+      border: none;
+    }
+
+    .btn-inscricao:hover,
+    .btn-inscricao:focus {
+      background-color: #2980b9;
+    }
+    
+    /* Etiqueta GRÁTIS */
+    .etiqueta-gratis {
+      display: inline-block;
+      background-color: #e74c3c;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-left: 10px;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      transform: rotate(-5deg);
+      position: relative;
+      top: -5px;
+    }
+
+    /* Botão de WhatsApp */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background-color: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      text-decoration: none;
+      transform: scale(0);
+      transition: transform 0.3s ease;
+      z-index: 100;
+    }
+    
+    /* Botão Voltar ao Topo */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #2980b9;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      text-decoration: none;
+      transform: scale(0);
+      transition: transform 0.3s ease;
+      z-index: 100;
+    }
+
+    .whatsapp-btn i {
+      font-size: 30px;
+    }
+
+    .whatsapp-btn.show, .back-to-top.show {
+      transform: scale(1);
+    }
+    
+    /* Contador de vagas */
+    .contador-vagas {
+      background-color: rgba(41, 128, 185, 0.1);
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    
+    .contador-vagas p {
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #2980b9;
+    }
+    
+    .progress-bar {
+      width: 100%;
+      background-color: #eee;
+      border-radius: 10px;
+      height: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      background-color: #2980b9;
+      height: 100%;
+      width: 70%;
+      border-radius: 10px;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px 10px;
+      }
+      main {
+        margin: 20px 10px;
+        padding: 20px 15px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      table th, table td {
+        font-size: 0.9rem;
+        padding: 6px 4px;
+      }
+      .whatsapp-btn {
+        bottom: 20px;
+        left: 20px;
+      }
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+  <!-- Font Awesome para o ícone do WhatsApp -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header id="topo">
+    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="60" height="60" style="margin-right: 15px;">
+        <path fill="#ffffff" d="M497,256c0,133.1-107.9,241-241,241S15,389.1,15,256S122.9,15,256,15S497,122.9,497,256z"/>
+        <path fill="#ffffff" d="M256,425c-93.4,0-169-75.6-169-169s75.6-169,169-169s169,75.6,169,169S349.4,425,256,425z M256,147c-60.1,0-109,48.9-109,109s48.9,109,109,109s109-48.9,109-109S316.1,147,256,147z"/>
+        <path fill="#ffffff" d="M260,330h-20V201c-16,0-18.25,5.25-25,15l-3.75-8.75c1.75-2,17-17.75,34-17.75h14.75V330z"/>
+      </svg>
+      <h1>Curso de Importação <span class="etiqueta-gratis">GRÁTIS</span></h1>
+    </div>
+    <p>Aprenda a importar produtos e iniciar seu negócio com conhecimento especializado</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Sobre o Curso</h2>
+      <p>Este curso gratuito oferece formação completa nos fundamentos e estratégias de importação, capacitando os participantes a identificar oportunidades, negociar com fornecedores internacionais e gerenciar todo o processo de importação de forma eficiente.</p>
+      
+      <div class="destaque">
+        <p><strong>Duração:</strong> 2 semanas (20 créditos totais, onde cada crédito equivale a 30 minutos de estudo)</p>
+        <p><strong>Modalidade:</strong> Online via Google Meet com sessões ao vivo e material de apoio</p>
+        <p><strong>Certificação:</strong> Certificado digital com selo de autenticidade de 10 horas</p>
+        <p><strong>Investimento:</strong> <span style="font-size: 1.2rem; font-weight: bold;">TOTALMENTE GRATUITO</span></p>
+      </div>
+      
+      <p>Ao concluir o curso, você estará apto a iniciar suas primeiras importações com segurança e conhecimento. Ideal para empreendedores e profissionais que desejam:</p>
+      <ul>
+        <li>Iniciar um negócio baseado em produtos importados</li>
+        <li>Encontrar fornecedores confiáveis no exterior</li>
+        <li>Entender a legislação e tributação na importação</li>
+        <li>Calcular custos e definir preços competitivos</li>
+        <li>Evitar problemas comuns que afetam importadores iniciantes</li>
+      </ul>
+      
+      <div class="contador-vagas">
+        <p>VAGAS LIMITADAS: 70% PREENCHIDAS</p>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Metodologia de Ensino</h2>
+      
+      <div class="metodologia-card">
+        <h4>🖥️ Aulas ao Vivo</h4>
+        <p>Todas as aulas serão ministradas ao vivo através do Google Meet, permitindo interação direta com o instrutor e demais participantes. As sessões ficam gravadas por 7 dias para revisão.</p>
+      </div>
+      
+      <div class="metodologia-card">
+        <h4>📚 Material Didático</h4>
+        <p>Acesso a guias práticos, modelos de documentos, planilhas de cálculo de custos e checklist completo para importação segura.</p>
+      </div>
+      
+      <div class="metodologia-card">
+        <h4>✅ Exemplos Reais</h4>
+        <p>Demonstrações de casos reais de importação, com análise detalhada de processos bem-sucedidos e erros comuns a serem evitados.</p>
+      </div>
+      
+      <div class="metodologia-card">
+        <h4>🔄 Simulações Práticas</h4>
+        <p>Simulação de negociações, cálculos de impostos e elaboração de documentação necessária para importações.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Plano do Curso Detalhado</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Módulo</th>
+            <th>Conteúdo Programático</th>
+            <th>Créditos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>
+              <strong>Introdução ao Mercado de Importação</strong>
+              <ul>
+                <li>Panorama atual do comércio internacional</li>
+                <li>Oportunidades de negócio com produtos importados</li>
+                <li>Perfil do importador de sucesso</li>
+                <li>Principais países exportadores por categoria de produto</li>
+              </ul>
+            </td>
+            <td>2 créditos</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>
+              <strong>Pesquisa e Seleção de Fornecedores</strong>
+              <ul>
+                <li>Plataformas confiáveis para encontrar fornecedores</li>
+                <li>Critérios de avaliação e qualificação de fornecedores</li>
+                <li>Verificação de autenticidade e reputação</li>
+                <li>Comunicação efetiva com fornecedores estrangeiros</li>
+              </ul>
+            </td>
+            <td>3 créditos</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>
+              <strong>Legislação e Tributação na Importação</strong>
+              <ul>
+                <li>Regimes aduaneiros e classificação fiscal</li>
+                <li>Impostos e taxas incidentes (II, IPI, ICMS, PIS/COFINS)</li>
+                <li>Documentação necessária para importação</li>
+                <li>Órgãos fiscalizadores e anuentes</li>
+              </ul>
+            </td>
+            <td>3 créditos</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>
+              <strong>Logística Internacional</strong>
+              <ul>
+                <li>Tipos de transporte (marítimo, aéreo, rodoviário)</li>
+                <li>Incoterms e responsabilidades</li>
+                <li>Embalagem e seguro de carga</li>
+                <li>Rastreamento e prazos de entrega</li>
+              </ul>
+            </td>
+            <td>3 créditos</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>
+              <strong>Formação de Preço e Viabilidade</strong>
+              <ul>
+                <li>Cálculo completo do custo de importação</li>
+                <li>Margem de lucro e precificação competitiva</li>
+                <li>Análise de viabilidade econômica</li>
+                <li>Estratégias para redução de custos na importação</li>
+              </ul>
+            </td>
+            <td>3 créditos</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>
+              <strong>Negociação Internacional</strong>
+              <ul>
+                <li>Técnicas eficazes de negociação com fornecedores</li>
+                <li>Aspectos culturais nas negociações</li>
+                <li>Formas de pagamento internacional</li>
+                <li>Proteção contra fraudes e golpes</li>
+              </ul>
+            </td>
+            <td>2 créditos</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>
+              <strong>Despacho Aduaneiro</strong>
+              <ul>
+                <li>Fluxo do processo de desembaraço</li>
+                <li>Canais de parametrização (verde, amarelo, vermelho e cinza)</li>
+                <li>Como lidar com exigências fiscais</li>
+                <li>Papel do despachante aduaneiro</li>
+              </ul>
+            </td>
+            <td>2 créditos</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>
+              <strong>Casos Práticos e Simulação</strong>
+              <ul>
+                <li>Simulação completa de um processo de importação</li>
+                <li>Análise de casos reais bem-sucedidos</li>
+                <li>Principais erros e como evitá-los</li>
+                <li>Estratégias para o primeiro lote de importação</li>
+              </ul>
+            </td>
+            <td>2 créditos</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Projeto Final e Certificação</h2>
+      <ul>
+        <li>Elaboração de um plano de importação para um produto escolhido</li>
+        <li>Simulação de custos e documentação necessária</li>
+        <li>Feedback personalizado do instrutor</li>
+        <li>Certificado digital com validação online para quem participar de pelo menos 75% das aulas</li>
+      </ul>
+      
+      <div class="destaque">
+        <h3>Por que o curso é gratuito?</h3>
+        <p>Este curso é oferecido gratuitamente como parte do nosso compromisso em fomentar o empreendedorismo e capacitar pessoas para novas oportunidades de negócio. Também funciona como uma amostra da nossa metodologia de ensino, permitindo que você conheça nossa abordagem antes de investir em nossos cursos avançados.</p>
+        <p>Ao final do curso, você terá a opção (não obrigatória) de conhecer nosso programa completo de formação em comércio internacional com módulos avançados e mentorias personalizadas.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Benefícios do Curso</h2>
+      <ul>
+        <li><strong>Conhecimento Prático:</strong> Conteúdo 100% aplicável ao dia a dia do importador</li>
+        <li><strong>Instrutor Especialista:</strong> Aulas ministradas por profissional com mais de 10 anos de experiência em comércio exterior</li>
+        <li><strong>Material Completo:</strong> Acesso a guias, planilhas e modelos de documentos para uso imediato</li>
+        <li><strong>Suporte:</strong> Grupo exclusivo no WhatsApp para tirar dúvidas durante o curso</li>
+        <li><strong>Networking:</strong> Contato com outros empreendedores interessados em importação</li>
+        <li><strong>Certificado Gratuito:</strong> Documento digital que comprova sua participação</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Datas e Horários</h2>
+      <div class="destaque">
+        <p><strong>Início das aulas:</strong> Próxima turma a iniciar em 20 de Maio de 2025</p>
+        <p><strong>Aulas síncronas:</strong> Segundas e quartas-feiras, das 19h às 21h</p>
+        <p><strong>Materiais complementares:</strong> Disponibilizados às sextas-feiras</p>
+        <p><strong>Duração total:</strong> 2 semanas (4 aulas ao vivo)</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Depoimentos de Alunos</h2>
+      <div class="metodologia-card">
+        <p><em>"Nunca imaginei que importar poderia ser tão acessível. O curso me deu confiança para fazer minha primeira importação, e hoje já tenho um pequeno negócio lucrativo com produtos da China."</em></p>
+        <p style="text-align: right;"><strong>- Carlos Mendes, Empreendedor</strong></p>
+      </div>
+
+      <div class="metodologia-card">
+        <p><em>"As informações sobre tributação e documentação foram essenciais para evitar problemas. Economizei muito dinheiro aplicando o conhecimento adquirido no curso."</em></p>
+        <p style="text-align: right;"><strong>- Ana Sousa, Proprietária de Loja Virtual</strong></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Perguntas Frequentes</h2>
+      <h3>O curso é realmente gratuito? Não tem nenhuma pegadinha?</h3>
+      <p>Sim, o curso é 100% gratuito. Não há taxas ocultas ou obrigatoriedade de compra de produtos ou serviços adicionais.</p>
+
+      <h3>Preciso ter conhecimento prévio sobre importação?</h3>
+      <p>Não é necessário nenhum conhecimento prévio. O curso foi desenvolvido para iniciantes, abordando todos os conceitos desde o básico.</p>
+
+      <h3>Vou conseguir importar logo após o curso?</h3>
+      <p>Sim! O curso fornece todos os conhecimentos necessários para realizar sua primeira importação com segurança. Ao final, você terá um passo a passo detalhado para iniciar seu processo de importação.</p>
+
+      <h3>Preciso ter uma empresa para participar ou importar?</h3>
+      <p>O curso aborda tanto importação para pessoa física quanto para pessoa jurídica. Você aprenderá as vantagens e desvantagens de cada modalidade para decidir o que é melhor para seu caso.</p>
+    </section>
+
+    <section style="text-align:center;">
+      <button class="btn-inscricao" onclick="alert('Obrigado pelo seu interesse! Em breve enviaremos um email com o link para a primeira aula.')">GARANTIR MINHA VAGA GRATUITA</button>
+      <p style="margin-top: 10px; font-size: 0.9rem;">Restam poucas vagas para a próxima turma!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Curso Gratuito de Importação | Todos os direitos reservados</p>
+    <p>Suporte: contato@cursodeimportacao.com | Tel: +258 85 274 5358</p>
+  </footer>
+
+  <!-- Botão de WhatsApp flutuante -->
+  <a href="https://wa.me/258852745358" class="whatsapp-btn" id="whatsappBtn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Botão Voltar ao Topo -->
+  <a href="#topo" class="back-to-top" id="backToTopBtn">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script>
+    // Script para mostrar o botão de WhatsApp e Voltar ao Topo ao rolar
+    window.addEventListener('scroll', function() {
+      const whatsappBtn = document.getElementById('whatsappBtn');
+      const backToTopBtn = document.getElementById('backToTopBtn');
+      
+      if (window.scrollY > 300) {
+        whatsappBtn.classList.add('show');
+        backToTopBtn.classList.add('show');
+      } else {
+        whatsappBtn.classList.remove('show');
+        backToTopBtn.classList.remove('show');
+      }
+    });
+    
+    // Rolagem suave ao clicar no botão Voltar ao Topo
+    document.getElementById('backToTopBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>

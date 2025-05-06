@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>eCursos Academy - Cursos de curta duração a distância</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    /* Custom Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+      background: #f8f9fa;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand img, .navbar-brand svg {
+      height: 50px;
+      max-width: 150px;
+      object-fit: contain;
+    }
+
+    /* Carousel captions cards */
+    .carousel-caption .mission-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem auto;
+      max-width: 1200px;
+    }
+
+    .carousel-caption .mission-card {
+      background: rgba(255, 255, 255, 0.95);
+      color: #212529;
+      width: 18rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border-top: 5px solid #0d6efd;
+      transform: translateY(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .carousel-caption .mission-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .carousel-caption .mission-card h3 {
+      font-weight: 700;
+      color: #212529;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .carousel-item.mission-slide {
+      background: rgba(13, 110, 253, 0.05);
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Statistics */
+    .statistics {
+      background: linear-gradient(135deg, #0d6efd, #0a58ca);
+      color: white;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .statistics h2 {
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 700;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Courses section */
+    #cursos {
+      background: #ffffff;
+      padding: 5rem 1rem;
+    }
+    
+    #cursos h2 {
+      position: relative;
+      padding-bottom: 1rem;
+      margin-bottom: 3rem;
+    }
+    
+    #cursos h2:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: #0d6efd;
+      border-radius: 2px;
+    }
+    
+    #cursos .course-card img {
+      height: 200px;
+      object-fit: cover;
+      border-radius: 0.5rem 0.5rem 0 0;
+      transition: transform 0.5s ease;
+    }
+    
+    #cursos .course-card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      background: white;
+      transition: transform 0.3s ease;
+      border: none;
+      height: 100%;
+    }
+    
+    #cursos .course-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 15px 30px rgba(13, 110, 253, 0.3);
+    }
+    
+    #cursos .course-card:hover img {
+      transform: scale(1.05);
+    }
+    
+    #cursos .course-card .price {
+      font-size: 1.25rem;
+      color: #0d6efd;
+    }
+    
+    #cursos .course-card .card-body {
+      padding: 1.5rem;
+    }
+    
+    .btn-primary {
+      background: #0d6efd;
+      border-color: #0d6efd;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background: #0a58ca;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+    }
+
+    /* Depoimentos */
+    #depoimentos {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      padding: 5rem 1rem;
+      text-align: center;
+      color: #343a40;
+    }
+    
+    #depoimentos .testimonial {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+    
+    #depoimentos .testimonial:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    #depoimentos .testimonial:before {
+      content: '"';
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-size: 5rem;
+      color: rgba(13, 110, 253, 0.1);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    
+    #depoimentos p.quote {
+      font-style: italic;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    #depoimentos .name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #0d6efd;
+      margin-bottom: 0.25rem;
+    }
+    
+    #depoimentos .role {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+
+    /* Como funciona */
+    #como-funciona {
+      background: #ffffff;
+      padding: 5rem 1rem;
+      text-align: center;
+      font-size: 1.15rem;
+      color: #212529;
+    }
+    
+    .process-card {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+    
+    .process-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      background: #fff;
+    }
+    
+    .process-icon {
+      width: 80px;
+      height: 80px;
+      background: #0d6efd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      color: white;
+      font-size: 2rem;
+    }
+
+    /* Inscrição */
+    #inscricao {
+      background: linear-gradient(135deg, #0d6efd, #074399);
+      color: white;
+      padding: 5rem 1rem;
+      text-align: center;
+    }
+    
+    #inscricao h2 {
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    
+    #inscricao .btn-light {
+      background: white;
+      color: #0d6efd;
+      border: none;
+      padding: 0.75rem 2rem;
+      font-weight: 700;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    #inscricao .btn-light:hover {
+      background: #f8f9fa;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      background: #212529;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      position: relative;
+    }
+    
+    footer .social-icons {
+      margin-bottom: 2rem;
+    }
+    
+    footer .social-icons a {
+      color: white;
+      font-size: 1.5rem;
+      margin: 0 1rem;
+      transition: color 0.3s ease;
+    }
+    
+    footer .social-icons a:hover {
+      color: #0d6efd;
+    }
+    
+    footer .footer-links {
+      margin-bottom: 2rem;
+    }
+    
+    footer .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      margin: 0 1rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    footer .footer-links a:hover {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* WhatsApp button */
+    #whatsapp-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25d366;
+      color: white;
+      font-size: 1.8rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      z-index: 1050;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    #whatsapp-btn:hover {
+      background: #1ebc5a;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+    
+    /* Curso Gratuito Banner */
+    .free-course-banner {
+      background: linear-gradient(135deg, #ffc107, #fd7e14);
+      color: #212529;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      margin: 3rem auto;
+      max-width: 900px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .free-course-banner h3 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    .free-course-banner:after {
+      content: "GRÁTIS";
+      position: absolute;
+      top: 20px;
+      right: -30px;
+      background: #dc3545;
+      color: white;
+      padding: 0.5rem 3rem;
+      transform: rotate(45deg);
+      font-weight: 700;
+      font-size: 0.85rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 767px) {
+      .carousel-caption .mission-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+      
+      .carousel-caption .mission-card {
+        width: 90%;
+        max-width: 300px;
+      }
+      
+      .statistics {
+        padding: 3rem 1rem;
+      }
+      
+      .stat-card {
+        margin-bottom: 2rem;
+      }
+      
+      #cursos, #depoimentos, #como-funciona, #inscricao {
+        padding: 3rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="50" height="50">
+          <!-- Gradiente para o livro -->
+          <defs>
+            <linearGradient id="bookGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#0d6efd;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#0095ff;stop-opacity:1" />
+            </linearGradient>
+            <!-- Gradiente para a lâmpada -->
+            <linearGradient id="bulbGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#0d6efd;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#074399;stop-opacity:1" />
+            </linearGradient>
+            <!-- Gradiente para o chapéu -->
+            <linearGradient id="capGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#00bfff;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#0095ff;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          
+          <!-- Livro base -->
+          <path d="M70,280 C70,260 330,260 330,280 L330,320 C330,340 70,340 70,320 Z" fill="url(#bookGradient)" />
+          
+          <!-- Páginas do livro -->
+          <path d="M200,280 C140,270 100,270 70,280 L70,320 C100,310 140,310 200,320 Z" fill="#ffffff" stroke="#0d6efd" stroke-width="1" />
+          <path d="M200,280 C260,270 300,270 330,280 L330,320 C300,310 260,310 200,320 Z" fill="#ffffff" stroke="#0d6efd" stroke-width="1" />
+          
+          <!-- Linhas do livro -->
+          <path d="M90,290 L180,290" stroke="#0d6efd" stroke-width="2" />
+          <path d="M90,300 L180,300" stroke="#0d6efd" stroke-width="2" />
+          <path d="M90,310 L180,310" stroke="#0d6efd" stroke-width="2" />
+          
+          <path d="M220,290 L310,290" stroke="#0d6efd" stroke-width="2" />
+          <path d="M220,300 L310,300" stroke="#0d6efd" stroke-width="2" />
+          <path d="M220,310 L310,310" stroke="#0d6efd" stroke-width="2" />
+          
+          <!-- Lâmpada -->
+          <path d="M200,210 C230,210 250,180 250,150 C250,120 230,90 200,90 C170,90 150,120 150,150 C150,180 170,210 200,210 Z" fill="url(#bulbGradient)" />
+          <rect x="190" y="210" width="20" height="10" rx="2" fill="#074399" />
+          <path d="M185,220 L215,220 L210,240 L190,240 Z" fill="#074399" />
+          
+          <!-- Chapéu de formatura -->
+          <path d="M100,100 L300,100 L200,60 Z" fill="url(#capGradient)" />
+          <rect x="195" y="60" width="10" height="30" fill="url(#capGradient)" />
+          <circle cx="205" cy="90" r="5" fill="url(#capGradient)" />
+          <path d="M200,100 L200,150" stroke="#ffffff" stroke-width="4" />
+          
+          <!-- Borda branca para dar contraste -->
+          <path d="M100,100 L300,100 L200,60 Z" fill="none" stroke="#ffffff" stroke-width="2" />
+          <path d="M200,210 C230,210 250,180 250,150 C250,120 230,90 200,90 C170,90 150,120 150,150 C150,180 170,210 200,210 Z" fill="none" stroke="#ffffff" stroke-width="2" />
+        </svg>
+        <span class="ms-2 fw-bold text-primary">eCursos Academy</span>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarMenu"
+        aria-controls="navbarMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-semibold">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#inicio">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cursos">Cursos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#como-funciona">Como Funciona</a></li>
+          <li class="nav-item"><a class="nav-link" href="#depoimentos">Depoimentos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#inscricao">Inscrição</a></li>
+          <li class="nav-item"><a class="nav-link" href="#biblioteca">Biblioteca</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contactos">Contactos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carousel -->
+  <section id="inicio">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <img src="https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg?auto=compress&cs=tinysrgb&w=1600" class="d-block w-100" alt="Cursos a distância" style="max-height:500px; object-fit:cover; filter: brightness(0.85);" />
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h2 class="fw-bold">Cursos de curta duração a distância</h2>
+            <p class="fs-5">Qualidade e flexibilidade para sua formação profissional.</p>
+            <button class="btn btn-primary btn-lg inscreva-btn mt-3">Comece Agora</button>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1600" class="d-block w-100" alt="Aprendizado Online" style="max-height:500px; object-fit:cover; filter: brightness(0.85);" />
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h2 class="fw-bold">Aprenda no seu ritmo</h2>
+            <p class="fs-5">Acesse as aulas e materiais 24/7 de qualquer dispositivo.</p>
+            <button class="btn btn-primary btn-lg inscreva-btn mt-3">Saiba Mais</button>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="https://images.pexels.com/photos/1181358/pexels-photo-1181358.jpeg?auto=compress&cs=tinysrgb&w=1600" class="d-block w-100" alt="Ensino de qualidade" style="max-height:500px; object-fit:cover; filter: brightness(0.85);" />
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h2 class="fw-bold">Excelência na educação</h2>
+            <p class="fs-5">Professores qualificados e conteúdo constantemente atualizado.</p>
+            <button class="btn btn-primary btn-lg inscreva-btn mt-3">Conheça os Cursos</button>
+          </div>
+        </div>
+
+        <div class="carousel-item mission-slide">
+          <div class="container">
+            <div class="mission-cards">
+              <div class="mission-card">
+                <h3>Missão</h3>
+                <p>Proporcionar educação de qualidade para todos, transformando vidas através da capacitação profissional acessível e relevante para o mercado.</p>
+              </div>
+              <div class="mission-card">
+                <h3>Visão</h3>
+                <p>Ser referência nacional em ensino a distância, democratizando o acesso ao conhecimento e criando oportunidades de crescimento profissional.</p>
+              </div>
+              <div class="mission-card">
+                <h3>Valores</h3>
+                <p>Compromisso com a educação de qualidade, inovação constante em metodologias de ensino e inclusão social através da democratização do conhecimento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Curso Gratuito Banner -->
+  <div class="container">
+    <div class="free-course-banner text-center">
+      <h3>Curso Gratuito de Introdução ao Marketing Digital</h3>
+      <p class="mb-4">Aprenda os fundamentos do marketing online em um curso 100% gratuito e certificado. Apenas por tempo limitado!</p>
+      <button class="btn btn-dark btn-lg">Inscreva-se no Curso Gratuito</button>
+    </div>
+  </div>
+
+  <!-- Statistics -->
+  <section class="statistics" aria-label="Estatísticas">
+    <div class="container">
+      <h2 class="mb-4">Nossos Números

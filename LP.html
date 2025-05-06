@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curso de Logística e Procurement</title>
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMGQ0N2E2IiBkPSJNMzg0LDM0NEgxMjhjLTcwLjY5LDAtMTI4LTU3LjMxLTEyOC0xMjhDMCwxNDUuMzEsNTcuMzEsODgsMTI4LDg4aDI1NmM3MC42OSwwLDEyOCw1Ny4zMSwxMjgsMTI4QzUxMiwyODYuNjksNDU0LjY5LDM0NCwzODQsMzQ0eiBNMTI4LDEyMGMtNTMuMDIsMC05Niw0Mi45OC05Niw5NnM0Mi45OCw5Niw5Niw5NmgyNTZjNTMuMDIsMCw5Ni00Mi45OCw5Ni05NnMtNDIuOTgtOTYtOTYtOTZIMTI4eiIvPjxwYXRoIGZpbGw9IiMwZDQ3YTYiIGQ9Ik0yMjQsMjU2YzAsMTcuNjctMTQuMzMsMzItMzIsMzJzLTMyLTE0LjMzLTMyLTMyYzAtMTcuNjcsMTQuMzMtMzIsMzItMzJTMjI0LDIzOC4zMywyMjQsMjU2eiBNMzUyLDI1NmMwLDE3LjY3LTE0LjMzLDMyLTMyLDMycy0zMi0xNC4zMy0zMi0zMmMwLTE3LjY3LDE0LjMzLTMyLDMyLTMyUzM1MiwyMzguMzMsMzUyLDI1NnoiLz48L3N2Zz4=">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Font & base */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #ecf5ff;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+      position: relative;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+      color: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(13, 71, 161, 0.3);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.4em;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    main {
+      max-width: 96%;
+      background: white;
+      margin: 30px auto;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    main section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      color: #0d47a1;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #1976d2;
+      padding-bottom: 8px;
+      font-weight: 700;
+    }
+
+    h3 {
+      color: #1565c0;
+      margin: 18px 0 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1em;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-bottom: 1.2em;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .destaque {
+      background-color: #e3f2fd;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #0d47a1;
+      margin: 15px 0;
+    }
+
+    table {
+      width: 96%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th, table td {
+      border: 1px solid #bbdefb;
+      padding: 12px 8px;
+      text-align: left;
+    }
+
+    table th {
+      background-color: #0d47a1;
+      color: white;
+      font-weight: bold;
+    }
+
+    table tr:nth-child(even) {
+      background-color: #e3f2fd;
+    }
+
+    table tr:hover {
+      background-color: #bbdefb;
+    }
+
+    .metodologia-card {
+      background: #ecf5ff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 4px solid #1976d2;
+    }
+
+    .metodologia-card h4 {
+      color: #0d47a1;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 10px 20px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Botão de inscrição */
+    .btn-inscricao {
+      display: inline-block;
+      background-color: #1976d2;
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+      margin-top: 15px;
+      border: none;
+    }
+
+    .btn-inscricao:hover,
+    .btn-inscricao:focus {
+      background-color: #0d47a1;
+    }
+
+    /* Botão de WhatsApp */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background-color: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      text-decoration: none;
+      transform: scale(0);
+      transition: transform 0.3s ease;
+      z-index: 100;
+    }
+    
+    /* Botão Voltar ao Topo */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #0d47a1;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      text-decoration: none;
+      transform: scale(0);
+      transition: transform 0.3s ease;
+      z-index: 100;
+    }
+
+    .whatsapp-btn i {
+      font-size: 30px;
+    }
+
+    .whatsapp-btn.show, .back-to-top.show {
+      transform: scale(1);
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px 10px;
+      }
+      main {
+        margin: 20px 10px;
+        padding: 20px 15px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      table th, table td {
+        font-size: 0.9rem;
+        padding: 6px 4px;
+      }
+      .whatsapp-btn {
+        bottom: 20px;
+        left: 20px;
+      }
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+  <!-- Font Awesome para o ícone do WhatsApp -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header id="topo">
+    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="60" height="60" style="margin-right: 15px;">
+        <path fill="#ffffff" d="M384,344H128c-70.69,0-128-57.31-128-128C0,145.31,57.31,88,128,88h256c70.69,0,128,57.31,128,128C512,286.69,454.69,344,384,344z M128,120c-53.02,0-96,42.98-96,96s42.98,96,96,96h256c53.02,0,96-42.98,96-96s-42.98-96-96-96H128z"/>
+        <path fill="#ffffff" d="M224,256c0,17.67-14.33,32-32,32s-32-14.33-32-32c0-17.67,14.33-32,32-32S224,238.33,224,256z M352,256c0,17.67-14.33,32-32,32s-32-14.33-32-32c0-17.67,14.33-32,32-32S352,238.33,352,256z"/>
+      </svg>
+      <h1>Curso de Logística e Procurement</h1>
+    </div>
+    <p>Estratégias avançadas para otimização da cadeia de suprimentos e processos de compras</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Sobre o Curso</h2>
+      <p>Este curso oferece formação completa nos princípios e práticas modernas de logística e procurement, capacitando os participantes a implementar estratégias eficazes de gestão da cadeia de suprimentos, otimização de compras e integração logística.</p>
+      
+      <div class="destaque">
+        <p><strong>Duração:</strong> 1 mês (60 créditos totais, onde cada crédito equivale a 30 minutos de estudo)</p>
+        <p><strong>Modalidade:</strong> Online via Google Meet com sessões ao vivo e material de apoio</p>
+        <p><strong>Certificação:</strong> Certificado digital com selo de autenticidade de 60 horas</p>
+        <p><strong>Investimento:</strong> <span style="font-size: 1.2rem; font-weight: bold;">899 MZN</span></p>
+      </div>
+      
+      <p>Ao concluir o curso, você estará apto a desenvolver e implementar estratégias de logística e procurement alinhadas com os objetivos da organização. Ideal para profissionais que desejam:</p>
+      <ul>
+        <li>Assumir posições de liderança em departamentos de logística e supply chain</li>
+        <li>Aprimorar técnicas de negociação e gestão de fornecedores</li>
+        <li>Implementar políticas eficientes de estoque e armazenagem</li>
+        <li>Otimizar processos de compras e reduzir custos operacionais</li>
+        <li>Atualizar-se sobre as tendências e melhores práticas em gestão da cadeia de suprimentos</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Metodologia de Ensino</h2>
+      
+      <div class="metodologia-card">
+        <h4>🖥️ Aulas ao Vivo</h4>
+        <p>Todas as aulas serão ministradas ao vivo através do Google Meet, permitindo interação direta com o instrutor e demais participantes. As sessões ficam gravadas para revisão posterior.</p>
+      </div>
+      
+      <div class="metodologia-card">
+        <h4>📚 Material Didático</h4>
+        <p>Acesso a e-books, templates de documentos de logística e procurement, planilhas de controle e ferramentas práticas para aplicação imediata no ambiente organizacional.</p>
+      </div>
+      
+      <div class="metodologia-card">
+        <h4>✅ Estudos de Caso</h4>
+        <p>Análise de situações reais de empresas para desenvolvimento da capacidade analítica e resolução de problemas práticos na cadeia de suprimentos.</p>
+      </div>
+      
+      <div class="metodologia-card">
+        <h4>🔄 Simulações Práticas</h4>
+        <p>Simulações de negociações, processos de compra, modelagem logística e tomada de decisão em cenários realistas de mercado.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Plano do Curso Detalhado</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Módulo</th>
+            <th>Conteúdo Programático</th>
+            <th>Créditos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>
+              <strong>Fundamentos de Logística e Procurement</strong>
+              <ul>
+                <li>Conceitos e evolução da logística empresarial</li>
+                <li>Papel estratégico do procurement nas organizações</li>
+                <li>Integração da cadeia de suprimentos</li>
+                <li>Principais indicadores e métricas (KPIs)</li>
+              </ul>
+            </td>
+            <td>4 créditos</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>
+              <strong>Gestão Estratégica de Compras</strong>
+              <ul>
+                <li>Planejamento estratégico de compras</li>
+                <li>Técnicas de sourcing e seleção de fornecedores</li>
+                <li>Análise de mercado e matriz de compras</li>
+                <li>Modelos de contratação e SLAs</li>
+                <li>Compras públicas e licitações</li>
+              </ul>
+            </td>
+            <td>8 créditos</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>
+              <strong>Negociação e Gestão de Fornecedores</strong>
+              <ul>
+                <li>Estratégias avançadas de negociação</li>
+                <li>Desenvolvimento e qualificação de fornecedores</li>
+                <li>Programas de parcerias e alianças estratégicas</li>
+                <li>Gestão de contratos e compliance</li>
+                <li>Avaliação de desempenho de fornecedores</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>
+              <strong>Gestão de Estoques e Armazenagem</strong>
+              <ul>
+                <li>Política e modelos de gestão de estoques</li>
+                <li>Previsão de demanda e planejamento</li>
+                <li>Técnicas de otimização de armazenagem</li>
+                <li>Sistemas WMS e gestão de centros de distribuição</li>
+                <li>Métodos de classificação e controle (ABC, XYZ, FIFO, LIFO)</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>
+              <strong>Transportes e Distribuição</strong>
+              <ul>
+                <li>Modais de transporte e intermodalidade</li>
+                <li>Roteirização e otimização de rotas</li>
+                <li>Gestão de frota e terceirização</li>
+                <li>Documentação e seguros de carga</li>
+                <li>Distribuição urbana e última milha</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>
+              <strong>Comércio Internacional e Importação</strong>
+              <ul>
+                <li>Incoterms e contratos internacionais</li>
+                <li>Processos aduaneiros e documentação</li>
+                <li>Tributação no comércio exterior</li>
+                <li>Gestão de riscos em operações internacionais</li>
+                <li>Sourcing global e análise de mercados externos</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>
+              <strong>Gestão de Custos Logísticos</strong>
+              <ul>
+                <li>Composição e análise de custos logísticos</li>
+                <li>TCO (Custo Total de Propriedade)</li>
+                <li>Metodologias de redução de custos</li>
+                <li>Projetos de produtividade e eficiência</li>
+                <li>Análise make-or-buy e terceirização</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>
+              <strong>Logística Reversa e Sustentabilidade</strong>
+              <ul>
+                <li>Conceitos e aplicações da logística reversa</li>
+                <li>Gestão de resíduos e economia circular</li>
+                <li>Procurement verde e compras sustentáveis</li>
+                <li>Legislação ambiental aplicada</li>
+                <li>Certificações e normas ambientais</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>
+              <strong>Tecnologia e Sistemas de Informação</strong>
+              <ul>
+                <li>Sistemas ERP, MRP e TMS</li>
+                <li>E-procurement e marketplaces B2B</li>
+                <li>Internet das Coisas (IoT) na logística</li>
+                <li>Big Data e Analytics em supply chain</li>
+                <li>Blockchain na cadeia de suprimentos</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>
+              <strong>Tendências e Inovação em Supply Chain</strong>
+              <ul>
+                <li>Indústria 4.0 e Supply Chain 4.0</li>
+                <li>Inteligência artificial aplicada à logística</li>
+                <li>Robótica e automação de processos</li>
+                <li>Supply Chain Risk Management</li>
+                <li>Supply Chain Resiliente e Ágil</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Projeto Final e Avaliação</h2>
+      <ul>
+        <li>Elaboração de um projeto de otimização da cadeia de suprimentos</li>
+        <li>Apresentação de solução para case real de logística ou procurement</li>
+        <li>Desenvolvimento de plano de redução de custos implementável</li>
+        <li>Feedback personalizado dos instrutores</li>
+      </ul>
+      
+      <div class="destaque">
+        <h3>Sistema de Avaliação</h3>
+        <p>Os participantes serão avaliados através de um sistema completo que inclui:</p>
+        <ul>
+          <li><strong>Testes Semanais Online:</strong> Questionários de múltipla escolha disponibilizados após cada módulo para verificar a compreensão dos conceitos fundamentais.</li>
+          <li><strong>Atividades Práticas:</strong> Desenvolvimento de planilhas de controle, análise de casos e resolução de problemas logísticos reais.</li>
+          <li><strong>Participação nas Aulas:</strong> Envolvimento nas discussões e contribuições durante as sessões ao vivo.</li>
+          <li><strong>Projeto Final:</strong> Desenvolvimento de um plano estratégico de otimização logística ou procurement aplicável a uma organização real, que corresponde a 40% da nota final.</li>
+        </ul>
+        <p>Para obter a certificação, o aluno deve alcançar média mínima de 70% nas avaliações e ter pelo menos 75% de presença nas aulas síncronas.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Benefícios do Curso</h2>
+      <ul>
+        <li><strong>Aplicação Imediata:</strong> Ferramentas e técnicas que podem ser implementadas no dia seguinte à aula</li>
+        <li><strong>Instrutores Experientes:</strong> Profissionais com sólida experiência em logística e procurement em empresas de destaque</li>
+        <li><strong>Networking:</strong> Oportunidade de conectar-se com outros profissionais da área</li>
+        <li><strong>Ferramentas Exclusivas:</strong> Acesso a modelos de contratos, planilhas de gestão e calculadoras de custos logísticos</li>
+        <li><strong>Mentoria:</strong> 30 dias de acesso ao instrutor para tirar dúvidas após a conclusão do curso</li>
+        <li><strong>Certificado Reconhecido:</strong> Documento que agrega valor ao seu currículo profissional</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Datas e Horários</h2>
+      <div class="destaque">
+        <p><strong>Início das aulas:</strong> Próxima turma a iniciar em 15 de Maio de 2025</p>
+        <p><strong>Aulas síncronas:</strong> Terças e quintas-feiras, das 19h às 21h</p>
+        <p><strong>Atividades assíncronas:</strong> Disponibilizadas às sextas-feiras para realização durante o fim de semana</p>
+        <p><strong>Plantão de dúvidas:</strong> Segundas-feiras, das 18h às 19h</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Depoimentos de Alunos</h2>
+      <div class="metodologia-card">
+        <p><em>"O curso transformou minha visão sobre a cadeia de suprimentos. As ferramentas práticas e os casos reais me prepararam para implementar mudanças significativas nos processos de compras da minha empresa."</em></p>
+        <p style="text-align: right;"><strong>- Joana Maria, Gerente de Compras</strong></p>
+      </div>
+
+      <div class="metodologia-card">
+        <p><em>"A qualidade do conteúdo e a experiência dos professores fazem toda diferença. Consegui reduzir em 15% os custos logísticos da minha empresa aplicando os conceitos aprendidos no curso."</em></p>
+        <p style="text-align: right;"><strong>- Mariana Moiane, Coordenadora de Logística</strong></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Perguntas Frequentes</h2>
+      <h3>Preciso ter experiência em logística para fazer o curso?</h3>
+      <p>Não é necessário experiência prévia em logística ou procurement, mas conhecimentos básicos de gestão são recomendados. O curso atende desde iniciantes até profissionais que desejam aprimorar suas competências.</p>
+
+      <h3>O certificado é reconhecido pelo mercado?</h3>
+      <p>Sim, o certificado é valorizado pelo mercado e possui validação digital para comprovar sua autenticidade.</p>
+
+      <h3>Posso aplicar o conteúdo em empresas de diferentes portes?</h3>
+      <p>Com certeza! O curso aborda técnicas adaptáveis tanto para pequenas empresas quanto para grandes corporações, com exemplos práticos para diferentes contextos organizacionais.</p>
+
+      <h3>O curso aborda logística internacional?</h3>
+      <p>Sim, um módulo completo é dedicado ao comércio internacional, incluindo importação, exportação, documentação e compliance para operações globais.</p>
+    </section>
+
+    <section style="text-align:center;">
+      <button class="btn-inscricao" onclick="alert('Obrigado pelo seu interesse! Em breve entraremos em contato para a inscrição.')">INSCREVA-SE AGORA</button>
+      <p style="margin-top: 10px; font-size: 0.9rem;">Vagas limitadas! Garanta já a sua!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 eCursos Academy Corporation | Todos os direitos reservados</p>
+    <p>Suporte: ecursosacademy@outlook.com | Tel: +258 85 274 5358</p>
+  </footer>
+
+  <!-- Botão de WhatsApp flutuante -->
+  <a href="https://wa.me/258852745358" class="whatsapp-btn" id="whatsappBtn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Botão Voltar ao Topo -->
+  <a href="#topo" class="back-to-top" id="backToTopBtn">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script>
+    // Script para mostrar o botão de WhatsApp e Voltar ao Topo ao rolar
+    window.addEventListener('scroll', function() {
+      const whatsappBtn = document.getElementById('whatsappBtn');
+      const backToTopBtn = document.getElementById('backToTopBtn');
+      
+      if (window.scrollY > 300) {
+        whatsappBtn.classList.add('show');
+        backToTopBtn.classList.add('show');
+      } else {
+        whatsappBtn.classList.remove('show');
+        backToTopBtn.classList.remove('show');
+      }
+    });
+    
+    // Rolagem suave ao clicar no botão Voltar ao Topo
+    document.getElementById('backToTopBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>

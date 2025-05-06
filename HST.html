@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curso de Higiene e Segurança no Trabalho</title>
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMmU3ZDMyIiBkPSJNMzUyLDI4OGMwLTYzLjg5My01MS41ODItMTE1LjQ3NS0xMTUuNDc1LTExNS40NzVTMTIxLjA1LDIyNC4xMDcsMTIxLjA1LDI4OEgzNTJ6IE0zNjIsNDYwYzAtMjYuNTEtMjEuNDktNDgtNDgtNDhIMTk4Yy0yNi41MSwwLTQ4LDIxLjQ5LTQ4LDQ4czIxLjQ5LDQ4LDQ4LDQ4aDExNkMzNDAuNTEsNTA4LDM2Miw0ODYuNTEsMzYyLDQ2MHogTTI1Niw4QzExOC44NDYsOCw4LDExOC44NDYsOCwyNTZzMTEwLjg0NiwyNDgsMjQ4LDI0OHMyNDgtMTEwLjg0NiwyNDgtMjQ4UzM5My4xNTQsOCwyNTYsOHogIi8+PC9zdmc+">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Font & base */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f3f8f3;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+      position: relative;
+    }
+
+    header {
+      background: #1e7d32;
+      color: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(30, 125, 50, 0.3);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.4em;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    main {
+      max-width: 96%;
+      background: white;
+      margin: 30px auto;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    main section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      color: #2e7d32;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #4caf50;
+      padding-bottom: 8px;
+      font-weight: 700;
+    }
+
+    h3 {
+      color: #388e3c;
+      margin: 18px 0 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1em;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-bottom: 1.2em;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .destaque {
+      background-color: #e8f5e9;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #2e7d32;
+      margin: 15px 0;
+    }
+
+    table {
+      width: 96%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th, table td {
+      border: 1px solid #c8e6c9;
+      padding: 12px 8px;
+      text-align: left;
+    }
+
+    table th {
+      background-color: #2e7d32;
+      color: white;
+      font-weight: bold;
+    }
+
+    table tr:nth-child(even) {
+      background-color: #e8f5e9;
+    }
+
+    table tr:hover {
+      background-color: #c8e6c9;
+    }
+
+    .metodologia-card {
+      background: #f1f8e9;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 4px solid #689f38;
+    }
+
+    .metodologia-card h4 {
+      color: #33691e;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 10px 20px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Botão de inscrição */
+    .btn-inscricao {
+      display: inline-block;
+      background-color: #4caf50;
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+      margin-top: 15px;
+      border: none;
+    }
+
+    .btn-inscricao:hover,
+    .btn-inscricao:focus {
+      background-color: #2e7d32;
+    }
+
+    /* Botão de WhatsApp */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background-color: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      text-decoration: none;
+      transform: scale(0);
+      transition: transform 0.3s ease;
+      z-index: 100;
+    }
+    
+    /* Botão Voltar ao Topo */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #2e7d32;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      text-decoration: none;
+      transform: scale(0);
+      transition: transform 0.3s ease;
+      z-index: 100;
+    }
+
+    .whatsapp-btn i {
+      font-size: 30px;
+    }
+
+    .whatsapp-btn.show, .back-to-top.show {
+      transform: scale(1);
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px 10px;
+      }
+      main {
+        margin: 20px 10px;
+        padding: 20px 15px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      table th, table td {
+        font-size: 0.9rem;
+        padding: 6px 4px;
+      }
+      .whatsapp-btn {
+        bottom: 20px;
+        left: 20px;
+      }
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+  <!-- Font Awesome para o ícone do WhatsApp -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header id="topo">
+    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="60" height="60" style="margin-right: 15px;">
+        <path fill="#ffffff" d="M352,288c0-63.893-51.582-115.475-115.475-115.475S121.05,224.107,121.05,288H352z M362,460c0-26.51-21.49-48-48-48H198c-26.51,0-48,21.49-48,48s21.49,48,48,48h116C340.51,508,362,486.51,362,460z M256,8C118.846,8,8,118.846,8,256s110.846,248,248,248s248-110.846,248-248S393.154,8,256,8z" />
+      </svg>
+      <h1>Curso de Higiene e Segurança no Trabalho</h1>
+    </div>
+    <p>Capacitação completa para ambientes laborais mais seguros e saudáveis</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Sobre o Curso</h2>
+      <p>Este curso oferece uma formação detalhada e prática nos princípios fundamentais de higiene e segurança no trabalho, capacitando os participantes a identificar, avaliar e mitigar riscos no ambiente laboral.</p>
+      
+      <div class="destaque">
+        <p><strong>Duração:</strong> 1 mês (60 créditos totais, onde cada crédito equivale a 30 minutos de estudo)</p>
+        <p><strong>Modalidade:</strong> Online via Google Meet com sessões ao vivo e material de apoio</p>
+        <p><strong>Certificação:</strong> Certificado digital com selo de autenticidade de 60 horas</p>
+        <p><strong>Investimento:</strong> <span style="font-size: 1.2rem; font-weight: bold;">899 MZN</span></p>
+      </div>
+      
+      <p>Ao concluir o curso, você estará apto a implementar medidas preventivas eficazes, promovendo a saúde e segurança de todos os colaboradores. Ideal para profissionais que desejam:</p>
+      <ul>
+        <li>Melhorar suas práticas no ambiente de trabalho</li>
+        <li>Alinhar-se às exigências legais e aos padrões de segurança internacionais</li>
+        <li>Desenvolver competências para atuar como responsável pela segurança no trabalho</li>
+        <li>Implementar programas de prevenção de acidentes</li>
+        <li>Reduzir riscos e melhorar a produtividade do ambiente laboral</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Metodologia de Ensino</h2>
+      
+      <div class="metodologia-card">
+        <h4>🖥️ Aulas ao Vivo</h4>
+        <p>Todas as aulas serão ministradas ao vivo através do Google Meet, permitindo interação direta com o instrutor e demais participantes. As sessões ficam gravadas para revisão posterior.</p>
+      </div>
+      
+      <div class="metodologia-card">
+        <h4>📚 Material Didático</h4>
+        <p>Acesso a apostilas digitais, checklists, modelos de documentação e infográficos para aplicação prática dos conhecimentos.</p>
+      </div>
+      
+      <div class="metodologia-card">
+        <h4>✅ Avaliação Contínua</h4>
+        <p>Atividades práticas, estudos de caso e exercícios de fixação após cada módulo, garantindo a assimilação do conteúdo.</p>
+      </div>
+      
+      <div class="metodologia-card">
+        <h4>👨‍👩‍👧‍👦 Trabalhos em Grupo</h4>
+        <p>Atividades colaborativas para simular situações reais do ambiente de trabalho e desenvolver competências de equipe.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Plano do Curso Detalhado</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Módulo</th>
+            <th>Conteúdo Programático</th>
+            <th>Créditos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>
+              <strong>Introdução à Higiene e Segurança no Trabalho</strong>
+              <ul>
+                <li>Conceitos fundamentais e terminologia</li>
+                <li>Evolução histórica da segurança no trabalho</li>
+                <li>Legislação aplicável</li>
+                <li>Responsabilidades do empregador e empregado</li>
+              </ul>
+            </td>
+            <td>4 créditos</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>
+              <strong>Identificação e Avaliação de Riscos Ambientais</strong>
+              <ul>
+                <li>Riscos físicos, químicos e biológicos</li>
+                <li>Técnicas de identificação de perigos</li>
+                <li>Análise Preliminar de Riscos (APR)</li>
+                <li>Mapeamento de riscos no ambiente laboral</li>
+                <li>Avaliação quantitativa e qualitativa</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>
+              <strong>Normas Regulamentadoras (NRs)</strong>
+              <ul>
+                <li>Introdução às principais NRs</li>
+                <li>NR-6: Equipamentos de Proteção Individual</li>
+                <li>NR-9: Programa de Prevenção de Riscos Ambientais</li>
+                <li>NR-17: Ergonomia</li>
+                <li>NR-23: Proteção Contra Incêndios</li>
+                <li>NR-35: Trabalho em Altura</li>
+              </ul>
+            </td>
+            <td>10 créditos</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>
+              <strong>Medidas de Controle e Prevenção de Acidentes</strong>
+              <ul>
+                <li>Hierarquia das medidas de controle</li>
+                <li>Engenharia de segurança</li>
+                <li>Controles administrativos</li>
+                <li>Análise de acidentes e incidentes</li>
+                <li>Técnica de análise de causa raiz</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>
+              <strong>Sistemas de Gestão de Segurança no Trabalho</strong>
+              <ul>
+                <li>ISO 45001: Sistema de Gestão de Saúde e Segurança Ocupacional</li>
+                <li>Documentação e registros</li>
+                <li>Indicadores de desempenho em segurança</li>
+                <li>Auditorias de segurança</li>
+                <li>Integração com outros sistemas de gestão</li>
+              </ul>
+            </td>
+            <td>10 créditos</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>
+              <strong>Ergonomia e suas Aplicações</strong>
+              <ul>
+                <li>Princípios ergonômicos básicos</li>
+                <li>Análise ergonômica do trabalho</li>
+                <li>Adaptação do posto de trabalho</li>
+                <li>Prevenção de LER/DORT</li>
+                <li>Ergonomia cognitiva e organizacional</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>
+              <strong>Equipamentos de Proteção Individual (EPIs) e Coletiva (EPCs)</strong>
+              <ul>
+                <li>Seleção de EPIs adequados para cada risco</li>
+                <li>Uso correto e manutenção de EPIs</li>
+                <li>Treinamento e conscientização</li>
+                <li>Especificações técnicas e certificações</li>
+                <li>Medidas de proteção coletiva e sua priorização</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>
+              <strong>Emergências e Primeiros Socorros no Ambiente Laboral</strong>
+              <ul>
+                <li>Plano de emergência e contingência</li>
+                <li>Brigada de incêndio</li>
+                <li>Técnicas básicas de primeiros socorros</li>
+                <li>Simulados de emergência</li>
+                <li>Sinalização de segurança</li>
+              </ul>
+            </td>
+            <td>8 créditos</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>
+              <strong>Higiene Ocupacional</strong>
+              <ul>
+                <li>Reconhecimento, avaliação e controle de agentes ambientais</li>
+                <li>Monitoramento da qualidade do ar</li>
+                <li>Exposição a produtos químicos</li>
+                <li>Controle de ruído e vibração</li>
+                <li>Iluminação e conforto térmico</li>
+              </ul>
+            </td>
+            <td>6 créditos</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>
+              <strong>Projeto Final e Avaliação</strong>
+              <ul>
+                <li>Elaboração de um programa básico de segurança</li>
+                <li>Apresentação de case study</li>
+                <li>Avaliação final de conhecimentos</li>
+                <li>Feedback e melhorias</li>
+              </ul>
+            </td>
+            <td>8 créditos</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Benefícios do Curso</h2>
+      <ul>
+        <li><strong>Aplicação Prática:</strong> Conteúdo voltado para a implementação real em diversos ambientes de trabalho</li>
+        <li><strong>Instrutores Especializados:</strong> Profissionais com ampla experiência no mercado e formação técnica</li>
+        <li><strong>Networking:</strong> Oportunidade de conectar-se com outros profissionais da área</li>
+        <li><strong>Material Completo:</strong> Acesso a templates, checklists e documentos modelo para aplicação imediata</li>
+        <li><strong>Suporte Pós-Curso:</strong> 30 dias de acesso ao instrutor para tirar dúvidas após a conclusão</li>
+        <li><strong>Certificado Reconhecido:</strong> Documento que agrega valor ao seu currículo profissional</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Datas e Horários</h2>
+      <div class="destaque">
+        <p><strong>Início das aulas:</strong> Próxima turma a iniciar em 15 de Maio de 2025</p>
+        <p><strong>Aulas síncronas:</strong> Segundas e quartas-feiras, das 19h às 21h</p>
+        <p><strong>Atividades assíncronas:</strong> Disponibilizadas às sextas-feiras para realização durante o fim de semana</p>
+        <p><strong>Plantão de dúvidas:</strong> Quintas-feiras, das 18h às 19h</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Depoimentos de Alunos</h2>
+      <div class="metodologia-card">
+        <p><em>"O curso superou minhas expectativas. O conteúdo é muito rico e prático, consegui implementar várias melhorias na empresa logo nas primeiras semanas."</em></p>
+        <p style="text-align: right;"><strong>- João Carlos, Técnico de Segurança</strong></p>
+      </div>
+
+      <div class="metodologia-card">
+        <p><em>"Os instrutores são excelentes, com grande conhecimento prático. Já recomendei para vários colegas de profissão."</em></p>
+        <p style="text-align: right;"><strong>- Maria Silva, Gestora de RH</strong></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Perguntas Frequentes</h2>
+      <h3>Preciso ter conhecimento prévio para fazer o curso?</h3>
+      <p>Não é necessário conhecimento prévio. O curso foi desenhado para atender desde iniciantes até profissionais que desejam aprimorar seus conhecimentos.</p>
+
+      <h3>O certificado é reconhecido?</h3>
+      <p>Sim, o certificado é reconhecido pelo mercado e possui validação digital para comprovar sua autenticidade.</p>
+
+      <h3>Posso assistir às aulas depois?</h3>
+      <p>Sim, todas as aulas ficam gravadas e disponíveis por 90 dias após o término do curso.</p>
+
+      <h3>Como funcionam as atividades práticas?</h3>
+      <p>As atividades práticas são realizadas através de estudos de caso, simulações e exercícios aplicáveis ao ambiente real de trabalho.</p>
+    </section>
+
+    <section style="text-align:center;">
+      <button class="btn-inscricao" onclick="alert('Obrigado pelo seu interesse! Em breve entraremos em contato para a inscrição.')">INSCREVA-SE AGORA</button>
+      <p style="margin-top: 10px; font-size: 0.9rem;">Vagas limitadas! Garanta já a sua!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 eCursos Academy| Todos os direitos reservados</p>
+    <p>Suporte: ecursosacademy@oulook.com | Tel: +258 85 274 5358</p>
+  </footer>
+
+  <!-- Botão de WhatsApp flutuante -->
+  <a href="https://wa.me/258852745358" class="whatsapp-btn" id="whatsappBtn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Botão Voltar ao Topo -->
+  <a href="#topo" class="back-to-top" id="backToTopBtn">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script>
+    // Script para mostrar o botão de WhatsApp e Voltar ao Topo ao rolar
+    window.addEventListener('scroll', function() {
+      const whatsappBtn = document.getElementById('whatsappBtn');
+      const backToTopBtn = document.getElementById('backToTopBtn');
+      
+      if (window.scrollY > 300) {
+        whatsappBtn.classList.add('show');
+        backToTopBtn.classList.add('show');
+      } else {
+        whatsappBtn.classList.remove('show');
+        backToTopBtn.classList.remove('show');
+      }
+    });
+    
+    // Rolagem suave ao clicar no botão Voltar ao Topo
+    document.getElementById('backToTopBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
